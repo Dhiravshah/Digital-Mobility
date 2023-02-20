@@ -3,44 +3,25 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Enter the total runs scored : ");
-		Scanner sc=new Scanner(System.in);
-		int overs=0,runs=0;
-		
-		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of overs");
+		int size = sc.nextInt();
 		try {
-			runs=sc.nextInt();
+			int runs[] = new int[size];
+		} catch (Exception e) {
+			System.out.println(e);
 		}
-		catch(Exception e)
-		{
-			System.out.println(e.getClass().getName());
-			return;
+		System.out.println("enter the number of runs for each over");
+		for (int i = 0; i < size; i++) {
+			runs[i] = sc.nextInt();
 		}
-		
-		
-		System.out.println("Enter the total overs faced : ");
-		
+		System.out.println("enter the over number:");
 		try {
-			 overs=sc.nextInt();
+			int choice = sc.nextInt();
+			System.out.println("Runs scored in this over:" + runs[choice - 1]);
+		} catch (Exception e) {
+			System.out.println(e);
 		}
-		catch(Exception e)
-		{
-			System.out.println(e.getClass().getName());
-		}
-		
-		
-		float runRate=0;
-		
-		try {
-			runRate=(runs/overs);
-			System.out.println("Current run rate is :"+(double)(runRate*100)/100);
-		}
-		catch(Exception e)
-		{
-			System.out.println( e.getClass().getName());
-		}
-		
-	
 	}
 
 }
